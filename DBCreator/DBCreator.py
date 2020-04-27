@@ -175,7 +175,7 @@ class MainMenu(cmd.Cmd):
             self.driver.close()
         try:
             self.driver = GraphDatabase.driver(
-                self.url, auth=(self.username, self.password))
+                self.url, auth=(self.username, self.password), encrypted=False)
             self.connected = True
             print("Database Connection Successful!")
         except:
